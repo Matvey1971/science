@@ -1,0 +1,15 @@
+.press {
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    background-color: aqua;
+    color: red;
+    border: none;
+    border-radius: 15px;
+} 
+.inscription {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    text-transform: uppercase;
+}
