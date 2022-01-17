@@ -20,22 +20,31 @@
 // test.addEventListener('click', pressButton);
 
 
-
-function describeClickButton() {
-    let test = document.querySelector(".container");
+let test = document.querySelector(".container");
+let describeClickButton = function() {
     test.style.color = "yellow";
     test.style.fontSize = "24px";
     test.style.display = "flex";
     test.style.alignItems = "center";
     test.style.flexDirection = "column";
-    return test;
 };
-let count = 0;
-let pressButton = function() {
-    
+
+function pressButton() {
     let notice = document.querySelector('.inscription');
-    count = count + 1;
-    return count % 2 === 0 ? notice.textContent = "don't press" : notice.textContent = "pressed";
+    notice.textContent = getLabelText();
 };
-describeClickButton().addEventListener('click', pressButton);
-    
+let but = document.querySelector('.press').addEventListener('click', pressButton);
+let count = false;
+
+function getLabelText() {
+    if (count) {
+        count = false;
+        return "don't press";
+    } else {
+        count = true;
+        return "pressed";
+    }; 
+};
+
+describeClickButton();
+
