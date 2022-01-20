@@ -53,10 +53,9 @@ let textButtonPlus = function() {
 };
 
 let textButtonMinus = function() {
-    alert('Hello')
     note -= 1;
     if (note <= 10) {
-        let item = document.querySelector('change-text-btn');
+        let item = document.querySelector('.change-text-btn');
         item.remove();
     };
 };
