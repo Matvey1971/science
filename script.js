@@ -39,25 +39,33 @@ let minusButton = document.createElement('button');
     bottomButtons.append(minusButton);
 
 let note = 0;
-
 let textButtonPlus = function() {
-    note += 1;
-    if (note <= 10) {
+    console.log(note);
+    note++;
+    console.log(note);
+    if (note <= 5) {
         let addTextButtonPlus = document.createElement('p');
         addTextButtonPlus.classList.add('change-text-btn');
         bottomButtons.after(addTextButtonPlus);
         addTextButtonPlus.textContent = 'Press me again';
-    } else if (note > 10) {
+    } else if (note > 5) {
         alert("Sorry, the button is no longer pressed");
+        note = 5;
     };
+    
 };
 
 let textButtonMinus = function() {
-    note -= 1;
-    if (note <= 10) {
+    console.log(note);
+    note--;
+    console.log(note);
+    if (note > -1) {
         let item = document.querySelector('.change-text-btn');
         item.remove();
     };
+    if (note <= -1) {
+        note = 0;
+    }
 };
 
 plusButton.addEventListener('click', textButtonPlus);
